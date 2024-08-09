@@ -1,0 +1,48 @@
+#servicos {
+  @include mbottom-1;
+  h2 {
+    @include title-2;
+    @include mbottom-2;
+    text-align: center;
+  }
+  .servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .servicos-item {
+    position: relative;
+  }
+  p {
+    @include text-cursive;
+    color: $w;
+    position: absolute;
+    bottom: 0;
+    right: 24px;
+  }
+
+  // responsividade
+  @include screen(tablet) {
+    &.container {
+      padding: 0;
+    }
+    .servicos-grid {
+      gap: 5px;
+    }
+  }
+
+  @include screen(mobile) {
+    .servicos-grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 360px);
+    }
+    .servicos-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      &[alt="Modelo2"] {
+        top: 80px;
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.footer-bg {
+  background-color: $c2;
+}
+
+.footer {
+  text-align: center;
+  color: $w;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  padding-top: $spacing-2;
+  padding-bottom: $spacing-2;
+  img {
+    max-width: fit-content;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  //responsividade
+  @include screen(tablet) {
+    ul {
+      gap: 24px 32px;
+    }
+  }
+
+  @include screen(mobile) {
+    ul {
+      gap: 24px;
+    }
+  }
+}
