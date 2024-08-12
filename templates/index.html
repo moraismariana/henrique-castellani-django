@@ -61,8 +61,11 @@
 
     <section id="sobre" class="container">
         <h2>Sobre mim</h2>
-        <p>Sou Henrique Castellani, um fotógrafo de Belo Horizonte, MG. Desde jovem, sempre fui fascinado por capturar momentos que contam histórias e revelam a beleza oculta do mundo ao nosso redor. A fotografia é a minha forma de expressão, um meio pelo qual posso eternizar emoções, paisagens e detalhes que, de outra forma, passariam despercebidos.</p>
-        <p>Escolhi a fotografia como profissão porque acredito no poder das imagens de inspirar, emocionar e conectar pessoas. Cada clique é uma nova aventura, uma chance de ver o mundo sob uma nova perspectiva e compartilhar essa visão única com todos.</p>
+        {% if sobre %}
+        {% for descricao in sobre %}
+        <p>{{ descricao.descricao }}</p>
+        {% endfor %}
+        {% endif %}
     </section>
 
     <section id="servicos" class="container">

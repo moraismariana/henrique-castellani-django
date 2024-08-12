@@ -14,3 +14,9 @@ class Servico(models.Model):
 
     def __str__(self):
         return self.servico
+    
+class Sobre(models.Model):
+    descricao = models.TextField(null=False, blank=False)
+
+    def __str__(self):
+        return f'Parágrafo {self.id}'
