@@ -110,46 +110,15 @@
     <section id="clientes" class="container">
         <h2>Clientes</h2>
         <div class="clientes-grid">
+            {% if clientes %}
+            {% for cliente in clientes %}
             <div class="clientes-item">
-                <img src="{% static '/assets/sections/clientes/clientes-1.png' %}" alt="Cliente 1">
-                <p>Fiz um ensaio fotográfico com o Henrique e o resultado foi simplesmente incrível. Ele soube captar exatamente o que eu queria, com um toque de criatividade que fez toda a diferença.</p>
-                <p>Julia Cardoso</p>
+                <img src="{{ cliente.foto.url }}" alt="Cliente">
+                <p>{{ cliente.comentario }}</p>
+                <p>{{ cliente.nome }}</p>
             </div>
-            <div class="clientes-item">
-                <img src="{% static '/assets/sections/clientes/clientes-2.png' %}" alt="Cliente 2">
-                <p>Henrique tem um olhar único para os detalhes. As fotos do nosso projeto ficaram profissionais e com uma qualidade excepcional. Recomendo!</p>
-                <p>Lucas Almeida</p>
-            </div>
-            <div class="clientes-item">
-                <img src="{% static '/assets/sections/clientes/clientes-3.png' %}" alt="Cliente 3">
-                <p>Eu nunca me senti tão à vontade em frente às câmeras como me senti com o Henrique. Ele tem um talento incrível para fazer as pessoas se sentirem especiais e os resultados são fotos deslumbrantes.</p>
-                <p>Cláudia Ferreira</p>
-            </div>
-            <div class="clientes-item">
-                <img src="{% static '/assets/sections/clientes/clientes-4.png' %}" alt="Cliente 4">
-                <p>Trabalhar com o Henrique foi uma experiência maravilhosa. Ele capturou a essência da minha família em cada foto. As imagens ficaram incríveis!</p>
-                <p>Ana Maria</p>
-            </div>
-            <div class="clientes-item-extra none">
-                <img src="{% static '/assets/sections/clientes/clientes-5.png' %}" alt="Cliente 5">
-                <p>As fotos do Henrique realmente destacaram a nossa marca de uma forma que nunca conseguimos antes. Sua criatividade e profissionalismo são impressionantes.</p>
-                <p>Marcos Vieira</p>
-            </div>
-            <div class="clientes-item-extra none">
-                <img src="{% static '/assets/sections/clientes/clientes-6.png' %}" alt="Cliente 6">
-                <p>Contratar o Henrique para o nosso casamento foi a melhor decisão que tomamos. Ele conseguiu capturar cada momento especial com uma sensibilidade única. As fotos são memórias que guardaremos para sempre.</p>
-                <p>Isabela Santos</p>
-            </div>
-            <div class="clientes-item-extra none">
-                <img src="{% static '/assets/sections/clientes/clientes-7.png' %}" alt="Cliente 7">
-                <p>Henrique é um verdadeiro artista. As fotos do meu retrato ficaram muito além do que eu esperava. Ele tem uma habilidade incrível de captar a verdadeira essência das pessoas.</p>
-                <p>Renato Lopes</p>
-            </div>
-            <div class="clientes-item-extra none">
-                <img src="{% static '/assets/sections/clientes/clientes-8.png' %}" alt="Cliente 8">
-                <p>O trabalho do Henrique superou todas as minhas expectativas. As fotos ficaram maravilhosas e o processo todo foi extremamente profissional. Recomendo a todos que querem fotos de alta qualidade.</p>
-                <p>Patrícia Lima</p>
-            </div>
+            {% endfor %}
+            {% endif %}
         </div>
         <button class="button">ver mais</button>
     </section>
