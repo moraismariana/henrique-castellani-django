@@ -68,18 +68,14 @@
     <section id="servicos" class="container">
         <h2>Serviços</h2>
         <div class="servicos-grid">
+            {% if servicos %}
+            {% for servico in servicos %}
             <div class="servicos-item">
-                <img src="{% static '/assets/sections/servicos/servicos-1.jpg' %}" alt="Modelo1">
-                <p>Editorial</p>
+                <img src="{{ servico.imagem.url }}" alt="Foto do Serviço">
+                <p>{{ servico.servico }}</p>
             </div>
-            <div class="servicos-item">
-                <img src="{% static '/assets/sections/servicos/servicos-2.jpg' %}" alt="Modelo2">
-                <p>Retratos</p>
-            </div>
-            <div class="servicos-item">
-                <img src="{% static '/assets/sections/servicos/servicos-3.jpg' %}" alt="Foto de casamento">
-                <p>Eventos</p>
-            </div>
+            {% endfor %}
+            {% endif %}
         </div>
     </section>
 

@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from portfolio.models import Cliente
+from portfolio.models import Cliente, Servico
 
 def index(request):
     clientes = Cliente.objects.all()
-    return render(request, 'index.html', {'clientes': clientes})
+    servicos = Servico.objects.all()
+    return render(request, 'index.html', {'clientes': clientes, 'servicos':servicos,})

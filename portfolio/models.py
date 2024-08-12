@@ -7,3 +7,10 @@ class Cliente(models.Model):
 
     def __str__(self):
         return self.nome
+    
+class Servico(models.Model):
+    servico = models.CharField(max_length=100, null=False, blank=False)
+    imagem = models.ImageField(upload_to="servicos", blank=False)
+
+    def __str__(self):
+        return self.servico
