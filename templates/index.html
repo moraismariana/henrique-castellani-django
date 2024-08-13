@@ -18,11 +18,10 @@
 
 <body>
     {% if intro %}
-    {% for item in intro %}
     <div class="intro-bg">
         <style>
             .intro-bg {
-                background-image: url("{{ item.imagem.url }}");
+                background-image: url("{{ intro.imagem.url }}");
             }
         </style>
         <div class="header-bg">
@@ -56,11 +55,10 @@
             </div>
         </div>
         <main class="intro container">
-            <h1>{{ item.titulo }}</h1>
-            <h2>{{ item.subtitulo }}</h2>
+            <h1>{{ intro.titulo }}</h1>
+            <h2>{{ intro.subtitulo }}</h2>
         </main>
     </div>
-    {% endfor %}
     {% endif %}
 
     <section id="sobre" class="container">
@@ -140,12 +138,10 @@
         <h2>Contato</h2>
         <div class="contato-conteudo">
             {% if contato %}
-            {% for item in contato %}
-            <p>{{ item.telefone }}</p>
-            <p>{{ item.email }}</p>
-            <p>{{ item.endereco_1 }}</p>
-            <p>{{ item.endereco_2 }}</p>
-            {% endfor %}
+            <p>{{ contato.telefone }}</p>
+            <p>{{ contato.email }}</p>
+            <p>{{ contato.endereco_1 }}</p>
+            <p>{{ contato.endereco_2 }}</p>
             {% endif %}
             <style>
                 .contato-conteudo {

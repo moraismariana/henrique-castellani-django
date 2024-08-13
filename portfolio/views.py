@@ -2,11 +2,11 @@ from django.shortcuts import render
 from portfolio.models import Cliente, Servico, Sobre, Introducao, Contato, Quadro_1, Quadro_2, Quadro_3, Quadro_4, Portfolio
 
 def index(request):
+    intro = Introducao.get_instance()
     clientes = Cliente.objects.all()
     servicos = Servico.objects.all()
     sobre = Sobre.objects.all()
-    intro = Introducao.objects.all()
-    contato = Contato.objects.all()
+    contato = Contato.get_instance()
     quadro_1 = Quadro_1.objects.all()
     quadro_2 = Quadro_2.objects.all()
     quadro_3 = Quadro_3.objects.all()
